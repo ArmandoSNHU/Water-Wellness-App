@@ -35,7 +35,7 @@ function playWaterSound() {
     setTimeout(() => {
         audio.pause();
         audio.currentTime = 0; // Reset the audio playback
-    }, 3000);
+    }, 1000);
 }
 
 function updateProgress(totalDrank = 0) {
