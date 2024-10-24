@@ -121,7 +121,7 @@ progress::-webkit-progress-value {
 
 /* Goal input and instructions styling */
 #goal-input {
-    width: 140px;
+    width: 100px; /* Increased width for more room */
     text-align: center;
     font-size: 1rem;
     border: none;
@@ -138,4 +138,33 @@ progress::-webkit-progress-value {
     font-size: 0.9rem;
     color: #666;
     margin-top: 5px;
+}
+
+/* Confetti Canvas Styling */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent clicking on the canvas */
+    z-index: 100; /* Ensure it is above all elements */
+}
+
+/* Reset Button Styling */
+#reset-btn {
+    margin-top: 20px;
+    padding: 12px;
+    background: #ff4747;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    z-index: 99;
+}
+
+#reset-btn:hover {
+    background: #d33f3f;
 }
