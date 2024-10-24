@@ -31,7 +31,7 @@ function playWaterSound() {
     const audio = document.getElementById('water-sound');
     audio.play();
     
-    // Stop the audio after 3 seconds
+    // Stop the audio after 1 second
     setTimeout(() => {
         audio.pause();
         audio.currentTime = 0; // Reset the audio playback
@@ -48,7 +48,10 @@ function updateProgress(totalDrank = 0) {
 
     // Calculate percentage of the goal achieved
     const percentage = (totalDrank / goal) * 100;
-    
+
     // Update the height of the water level in the bottle
     waterLevel.style.height = `${percentage}%`;
+
+    // Change progress bar color progressively based on the percentage
+    progressBar.style.backgroundColor = `rgba(79, 195, 247, ${percentage / 100})`;
 }
