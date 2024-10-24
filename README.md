@@ -16,4 +16,6 @@ HTML, CSS, JavaScript
 Canvas animations
 Audio playback for feedback
 Attribution:
-Celebration sound: "Ta Da" by Mike Koenig, licensed under Creative Commons Attribution 3.0. More info: Ta Da Sound
+Celebration sound: "Ta Da" by Mike Koenig, licensed under Creative Commons Attribution 3.0. More info:
+
+Celebration sound: ["Ta Da" by Mike Koenig](https://soundbible.com/1003-Ta-Da.html), licensed under Creative Commons Attribution 3.0.
