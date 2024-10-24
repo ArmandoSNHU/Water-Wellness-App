@@ -31,16 +31,24 @@ function playWaterSound() {
     const audio = document.getElementById('water-sound');
     audio.play();
     
-    // Stop the audio after 1 second
+    // Stop the audio after 3 seconds
     setTimeout(() => {
         audio.pause();
         audio.currentTime = 0; // Reset the audio playback
-    }, 1000);
+    }, 3000);
 }
 
 function updateProgress(totalDrank = 0) {
     const goal = 2000; // Daily goal in ml
     const progressBar = document.getElementById('progress-bar');
+    const waterLevel = document.querySelector('.water-level');
+    
     progressBar.value = totalDrank;
     progressBar.max = goal;
+
+    // Calculate percentage of the goal achieved
+    const percentage = (totalDrank / goal) * 100;
+    
+    // Update the height of the water level in the bottle
+    waterLevel.style.height = `${percentage}%`;
 }

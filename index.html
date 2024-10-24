@@ -21,6 +21,23 @@
             <h2>Progress</h2>
             <progress id="progress-bar" value="0" max="2000"></progress>
         </div>
+        <div class="bottle-container">
+            <div class="water-level">
+                <svg class="bottle" viewBox="0 0 200 400">
+                    <path class="wave" d="M0,300 C50,290 150,310 200,300 V400 H0 Z">
+                        <animate
+                          attributeName="d"
+                          dur="5s"
+                          repeatCount="indefinite"
+                          values="
+                            M0,300 C50,290 150,310 200,300 V400 H0 Z;
+                            M0,290 C50,280 150,320 200,290 V400 H0 Z;
+                            M0,300 C50,290 150,310 200,300 V400 H0 Z
+                          " />
+                    </path>
+                </svg>
+            </div>
+        </div>
         <audio id="water-sound" src="assets/waterW.mp3" preload="auto"></audio>
     </div>
     <script src="script.js"></script>
