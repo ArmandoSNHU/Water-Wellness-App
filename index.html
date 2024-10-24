@@ -10,8 +10,9 @@
     <div class="container">
         <h1>Water Wellness</h1>
         <div class="goal-info">
-            <h2>Today's Goal: <span id="goal">2000 ml</span></h2>
+            <h2>Today's Goal: <input type="number" id="goal-input" value="2000" /> ml</h2>
             <h3>Total Drank: <span id="total-drank">0 ml</span></h3>
+            <p class="instructions">Press Enter to save today's goal</p>
         </div>
         <div class="input-section">
             <input type="number" id="amount" placeholder="Enter amount (ml)" />
@@ -39,6 +40,7 @@
             </div>
         </div>
         <audio id="water-sound" src="assets/waterW.mp3" preload="auto"></audio>
+        <audio id="celebrate-sound" src="assets/Ta Da-SoundBible.com-1884170640.mp3" preload="auto"></audio>
     </div>
     <script src="script.js"></script>
 </body>

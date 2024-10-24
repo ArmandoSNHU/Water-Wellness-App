@@ -1,6 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     updateProgress(); // Initialize progress on load
+
+    // Listen for "Enter" key to save the daily goal
+    const goalInput = document.getElementById('goal-input');
+    goalInput.addEventListener('keypress', function (event) {
+        if (event.key === "Enter") {
+            saveGoal();
+        }
+    });
 });
+
+function saveGoal() {
+    const goalInput = document.getElementById('goal-input');
+    const newGoal = parseInt(goalInput.value);
+    if (!newGoal || newGoal <= 0) {
+        alert("Please enter a valid goal.");
+        return;
+    }
+
+    // Update the progress bar max value
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.max = newGoal;
+
+    // Recalculate progress with the new goal
+    const totalDrank = parseInt(document.getElementById('total-drank').textContent.split(' ')[0]);
+    updateProgress(totalDrank);
+}
 
 function addWater() {
     const amountInput = document.getElementById('amount');
@@ -39,10 +64,11 @@ function playWaterSound() {
 }
 
 function updateProgress(totalDrank = 0) {
-    const goal = 2000; // Daily goal in ml
+    const goal = parseInt(document.getElementById('goal-input').value); // Get the current goal
     const progressBar = document.getElementById('progress-bar');
     const waterLevel = document.querySelector('.water-level');
-    
+    const celebrateSound = document.getElementById('celebrate-sound');
+
     progressBar.value = totalDrank;
     progressBar.max = goal;
 
@@ -52,6 +78,8 @@ function updateProgress(totalDrank = 0) {
     // Update the height of the water level in the bottle
     waterLevel.style.height = `${percentage}%`;
 
-    // Change progress bar color progressively based on the percentage
-    progressBar.style.backgroundColor = `rgba(79, 195, 247, ${percentage / 100})`;
+    // Play celebration sound if the goal is met
+    if (totalDrank >= goal) {
+        celebrateSound.play();
+    }
 }
