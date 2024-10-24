@@ -31,11 +31,11 @@ function playWaterSound() {
     const audio = document.getElementById('water-sound');
     audio.play();
     
-    // Stop the audio after 3 seconds
+    // Stop the audio after 1 second
     setTimeout(() => {
         audio.pause();
         audio.currentTime = 0; // Reset the audio playback
-    }, 3000);
+    }, 1000);
 }
 
 function updateProgress(totalDrank = 0) {
